@@ -284,6 +284,7 @@ header {
     gap: 1.5rem;
     box-sizing: border-box;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* Form Groups (Label + Input wrapper) */
@@ -446,6 +447,7 @@ header {
     /* Darkens the main app background */
     backdrop-filter: blur(8px);
     overflow-x: hidden;
+    overflow-y: hidden;
     /* Smoothly blurs everything behind it */
     -webkit-backdrop-filter: blur(8px);
     /* Safari support */
