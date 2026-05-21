@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- script -->
+    <script>     
+        if (localStorage.getItem("PageMode") === "moon") {
+            document.documentElement.classList.add("moon");
+        } else {
+            document.documentElement.classList.add("light");
+        }  
+    </script>
+
+    <script src="script.js" ></script> 
+</head>
+<body>
+    <!-- Header  -->
+    <header>
+        <div class="Note-header">
+            <img src="imges/Notes.png" alt="Notes Icon"  id="NotesIcon">
+            <span>Notes App</span>
+        </div>
+        <div class="Search-bar">
+            <input type="search" name="Search Notes" id="SearchNote">
+            <button type="button" onclick="searchbook()">Search</button>
+        </div>
+        <div class="Note-header2">
+            <button type="button" onclick="openmodal()" id="NewNote"><img src="imges/add.png" alt="">New Notes</button>
+        </div>
+        <div class="theme-toggle">
+            <button class="theme-btn theme-btn-light " onclick="setlighttheme()" title="Snow Edition">
+                <img src="imges/light.png" alt="lightmode" style="width: 22px;">
+            </button>
+            <button class="theme-btn theme-btn-dark" onclick="setmoontheme()" title="Carbon Edition">
+                <img src="imges/moon.png" alt="moonMode" style="width: 22px;">
+            </button>
+        </div>
+    </header>
+
+    <section id="Body">
+          <!-- Dublicated notes will appear here -->
+    </section>
+
+    <!-- Upload new note sections -->
+    <section id="modalOverlay" class="modal-overlay">
+        <section id="uploadNote">
+            <div class="form-group">
+                <label for="noteTitle">Title</label>
+                <input type="text" name="title" id="newTitle" placeholder="Enter a catchy title..." required>
+            </div>
+            <div class="form-group">
+                <label for="noteBody">Body</label>
+                <!-- Changed to textarea for a professional multi-line typing experience -->
+                <textarea name="body" id="newBody" rows="6" placeholder="Start typing your note here..."
+                    required></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button type="submit" id="btn-add" onclick="uploadNote()">Add Note</button>
+            </div>
+        </section>
+    </section>
+
+   <!-- simple message for erros,info,success -->
+    <section id="Notification" class="modal-overlay">
+        <div class="NotificationMesg">
+            <h2 id="notiTitle">Title Message</h2>
+            <p id="notiText">Message</p>
+        </div>
+        <div>
+            <button id="notiCloseBtn">Cancel</button>
+        </div>
+    </section>
+
+   <!-- Update and delete notes -->
+    <section id="menu" class="modal-overlay">
+        <section id="uploadNote">
+            <div class="form-group">
+                <label for="noteTitle">Title</label>
+                <input type="text" name="title" id="newsTitle" placeholder="Enter a catchy title...">
+            </div>
+            <div class="form-group">
+                <label for="noteBody">Body</label>
+                <!-- Changed to textarea for a professional multi-line typing experience -->
+                <textarea name="body" id="newsBody" rows="6" placeholder="Start typing your note here..."
+                    required></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="btn-CancelEdit">Cancel</button>
+                <button type="button" id="btn-Delete">Delete note</button>
+                <button type="submit" id="btn-update">Update note</button>
+            </div>
+        </section>
+        
+</body>
+
+</html>
